@@ -3,10 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>내 첫 웹페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .date-box {
+      display: inline-block;
+      background-color: #f0f4ff;
+      border: 2px solid #4a6cf7;
+      border-radius: 10px;
+      padding: 20px 40px;
+      margin-top: 20px;
+    }
+    .date-box p {
+      font-size: 1.4em;
+      color: #333;
+      margin: 0;
+    }
+    .date-box span {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #4a6cf7;
+    }
+  </style>
 </head>
 <body>
   <h1>안녕하세요, 제 첫 웹페이지입니다!</h1>
   <p>Netlify를 통해 배포한 HTML 페이지입니다.</p>
+
+  <div class="date-box">
+    <p>오늘 날짜</p>
+    <span id="today"></span>
+  </div>
+
+  <script>
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+    document.getElementById('today').textContent = today.toLocaleDateString('ko-KR', options);
+  </script>
 </body>
 </html>
 
